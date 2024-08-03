@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Touching Molandak</title>
+    <style>
+         *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+         }
+         body{
+            width: 90vw;
+            margin: auto;
+            border: 5px solid #e7daff;
+            position: relative;
+
+         }
+        #count_div {
+            background-color:#a49245;
+            height: 10vh;
+            font-size: 3vw;
+        }
+        #click_area{
+            background-color:#cac3a2;
+            height: 85vh;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+ 
+        .clicked_molandak {
+            background-image: url('./molandak02.png'); }
+        .molandak {
+            background-image: url('./molandak01.png');
+}
+        
+    </style>
+</head>
+<body>
+    <div id="count_div">
+        <h3>Touching Molandak: <span id="click_count">0</span></h3>
+    </div>
+    <div id="click_area" class="molandak">
+</div>
+</body>
+<script type="text/javascript">
+    let click_area = document.getElementById('click_area');
+    let click_count = document.getElementById('click_count');
+    let molandak = document.getElementById('molandak');
+    let click_count_number = 0;
+    let is_click = false
+    click_area.addEventListener('click', function(){
+        click_count_number += 1;
+        if (!is_click){
+            click_area.classList.remove('molandak');
+        click_area.classList.add('clicked_molandak');
+        is_click = true;
+        }
+        else{
+        click_area.classList.remove('clicked_molandak');
+        click_area.classList.add('molandak');
+        is_click = false;
+        }
+        click_count.innerHTML = click_count_number;
+    })
+
+    
+</script>
+</html>

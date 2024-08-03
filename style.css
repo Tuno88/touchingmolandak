@@ -1,0 +1,7 @@
+.clicked_molandak {
+    background-color: blueviolet;
+}
+.molandak {
+    background-color: aquamarine;
+    src: url('./molandak01.png');
+}
